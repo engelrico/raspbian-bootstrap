@@ -1,14 +1,9 @@
 #!/usr/bin/env ansible-playbook
 ---
-- hosts: engelpi
+- name: start to setup engelpi
+  hosts: engelpi
   gather_facts: yes
-  vars:
-    packages_to_install: [ git, automake, build-essential, 
-        python-pip, ruby-dev, python-dev,
-        vim
-        ]
-    update_cache: no
-  sudo: yes
+
   tasks:
     - name: install python-apt
       command: apt-get install python-apt
