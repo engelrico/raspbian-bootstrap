@@ -5,7 +5,7 @@
   connection: local
   become: yes
   tasks:
-    - name: install python-apt
-      command: apt-get install python-apt
-      register: aptget
-      changed_when: "'python-apt is already the newest version.' not in aptget.stdout_lines"
+  - name: Install latest version of git i
+    apt:
+    name: git
+    state: latest
