@@ -1,14 +1,10 @@
 #!/usr/bin/env ansible-playbook
 ---
 - name: start to setup engelpi
-  hosts: engelpi
-  gather_facts: yes
-
+  hosts: all
+  gather_facts: false
   tasks:
     - name: install python-apt
       command: apt-get install python-apt
       register: aptget
       changed_when: "'python-apt is already the newest version.' not in aptget.stdout_lines"
-
-      
-  ignore_errors: true
