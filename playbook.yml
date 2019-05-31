@@ -5,7 +5,7 @@
   connection: local
   become: yes
   tasks:
-  - name: Install latest version of git i
-    apt:
-    name: git
-    state: latest
+   - name: Install latest version of git i
+     apt:
+     name: git
+     state: latest
