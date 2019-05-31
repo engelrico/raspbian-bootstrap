@@ -1,0 +1,2 @@
+# raspbian-bootstrap
+setup raspberry
