@@ -1,8 +1,9 @@
 #!/usr/bin/env ansible-playbook
 ---
-- name: start to setup engelpi
-  hosts: all
-  gather_facts: false
+- name: run the playbook tasks on the localhost
+  hosts: 127.0.0.1
+  connection: local
+  become: yes
   tasks:
     - name: install python-apt
       command: apt-get install python-apt
