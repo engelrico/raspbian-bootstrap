@@ -1,0 +1,16 @@
+---
+
+- name: OCRmyPDF
+  apt:
+    name: ocrmypdf
+    state: latest
+  register: installation
+  become: yes
+
+- name: tesseract deutsch
+  apt:
+    name: tesseract-ocr-deu
+    state: latest
+  register: installation
+  become: yes
+
