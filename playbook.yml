@@ -1,4 +1,5 @@
 - hosts: localhost
   roles:
     - {role: basic, tags: basic}
+    - {role: git, tags: git}
     - {role: ocrmypdf, tags: ocrmypdf}

@@ -1,0 +1,21 @@
+- name: git
+  apt:
+    name: git
+    state: latest
+  register: installation
+  become: yes
+
+- git_config:
+    name: user.name
+    scope: global
+    value: engelriCo
+
+- git_config:
+    name: user.email
+    scope: global
+    value: rico@engelrico.de
+   
+- git_config:
+    name: ui.color
+    scope: global
+    value: True
