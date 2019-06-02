@@ -1,0 +1,28 @@
+- name: sshfs
+  apt:
+    name: sshfs
+    state: latest
+  register: installation
+  become: yes
+
+- name: create directory - mountpoint for strato hidrive
+  file:
+    path: /media/cloud
+    state: directory
+    mode: '0755'
+  become: yes
+
+- name: create directory - mountpoint for local drive
+  file:
+    path: /media/data
+    state: directory
+    mode: '0755'
+  become: yes
+
+- name: Mount up device PlatteImSchrank by UUID
+  mount:
+    name: /media/data
+    src: UUID=8f84ffcf-6ae2-491f-99dd-f9c6d409701b
+    fstype: ext4
+    state: mounted
+  become: yes

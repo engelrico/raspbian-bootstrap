@@ -1,0 +1,14 @@
+- name: ensure group "fileShareGroup" exists
+  group:
+    name: fileShareGroup
+    gid: 1004 
+    state: present
+  become: yes
+
+- name: add user "fileMaster"
+  user:
+    name: fileMaster
+    shell: /bin/bash
+    groups: fileShareGroup
+    uid: 1002
+  become: yes
