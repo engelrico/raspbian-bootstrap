@@ -1,7 +1,7 @@
 - name: ensure group "fileShareGroup" exists
   group:
     name: fileShareGroup
-    gid: 1004 
+    gid: 1004
     state: present
   become: yes
 
@@ -9,6 +9,6 @@
   user:
     name: fileMaster
     shell: /bin/bash
-    groups: fileShareGroup
+    groups: fileShareGroup,davfs2
     uid: 1002
   become: yes

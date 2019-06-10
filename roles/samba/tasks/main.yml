@@ -1,0 +1,24 @@
+- name: samba
+  apt:
+    name: samba
+    state: latest
+  register: installation
+  become: yes
+
+- name: check if rules file exists
+  stat:
+    path: /etc/samba/smb.conf.backup
+  register: sambaBackup
+
+- name: backup original samba.conf only if there is no backup
+  command: "cp /etc/samba/smb.conf /etc/samba/smb.conf.backup"
+  when: sambaBackup.stat.exists == false
+  become: yes
+
+- name: put the customized conf to original place
+  shell: cp ./roles/samba/smb.conf /etc/samba/smb.conf
+  become: yes
+
+- name: restart SAMBA
+  shell: service smbd restart
+  become: yes

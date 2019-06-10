@@ -41,3 +41,24 @@
     state: latest
   register: installation
   become: yes
+
+- name: fuse
+  apt:
+    name: fuse
+    state: latest
+  register: installation
+  become: yes
+
+- name: sshfs
+  apt:
+    name: sshfs
+    state: latest
+  register: installation
+  become: yes
+
+- name: davfs2 - webdav for strato hidrive
+  apt:
+    name: davfs2
+    state: latest
+  register: installation
+  become: yes

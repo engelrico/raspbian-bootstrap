@@ -1,15 +1,10 @@
-- name: sshfs
-  apt:
-    name: sshfs
-    state: latest
-  register: installation
-  become: yes
 
 - name: create directory - mountpoint for strato hidrive
   file:
     path: /media/cloud
     state: directory
     mode: '0755'
+    owner: fileMaster
   become: yes
 
 - name: create directory - mountpoint for local drive
@@ -24,5 +19,13 @@
     name: /media/data
     src: UUID=8f84ffcf-6ae2-491f-99dd-f9c6d409701b
     fstype: ext4
+    state: mounted
+  become: yes
+
+- name: Mount up device strato hidrive
+  mount:
+    name: /media/cloud
+    src: https://webdav.hidrive.strato.com/users/engelrico
+    fstype: davfs
     state: mounted
   become: yes
