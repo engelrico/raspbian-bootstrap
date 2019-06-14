@@ -28,3 +28,73 @@
   register: installation
   become: yes
 
+- name: xsltproc
+  apt:
+    name: xsltproc
+    state: latest
+  register: installation
+  become: yes
+
+- name: unzip
+  apt:
+    name: unzip
+    state: latest
+  register: installation
+  become: yes
+
+- name: poppler-utils
+  apt:
+    name: poppler-utils
+    state: latest
+  register: installation
+  become: yes
+
+- name: antiword
+  apt:
+    name: antiword
+    state: latest
+  register: installation
+  become: yes
+
+- name: wv
+  apt:
+    name: wv
+    state: latest
+  register: installation
+  become: yes
+
+- name: libwpd-tools
+  apt:
+    name: libwpd-tools
+    state: latest
+  register: installation
+  become: yes
+
+- name: catdoc
+  apt:
+    name: catdoc
+    state: latest
+  register: installation
+  become: yes
+
+- name: libchm-bin
+  apt:
+    name: libchm-bin
+    state: latest
+  register: installation
+  become: yes
+
+- name: info
+  apt:
+    name: info
+    state: latest
+  register: installation
+  become: yes
+
+- name: tar
+  apt:
+    name: tar
+    state: latest
+  register: installation
+  become: yes
+      

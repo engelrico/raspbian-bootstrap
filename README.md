@@ -11,6 +11,7 @@ later(but easy)
 
 manualy do:
 sudo smbpasswd -a fileMaster
+put secrets to /etc/davfs2/secrets
 
 
 start:
@@ -18,4 +19,5 @@ ansible-playbook -K ./playbook.yml --tags "samba"
 ansible-playbook -K ./playbook.yml
 
 
+hints:
 ocrmypdf -l deu --tesseract-timeout 60 SCN_002365.pdf ocr.SCN_002365.pdf

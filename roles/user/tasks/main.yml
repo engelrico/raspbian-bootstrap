@@ -12,3 +12,10 @@
     groups: fileShareGroup,davfs2
     uid: 1002
   become: yes
+
+- name: add user "pi" to groups
+  user:
+    append: true
+    name: pi
+    groups: fileShareGroup,davfs2
+  become: yes

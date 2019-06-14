@@ -5,4 +5,5 @@
     - {role: ocr,   tags: ocr}
     - {role: mount, tags: mount}
     - {role: user,  tags: user}
-    - {role: samba,  tags: samba}  
+    - {role: samba,  tags: samba}
+    - {role: handleDocuments,  tags: handleDocuments}  

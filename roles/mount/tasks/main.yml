@@ -19,13 +19,15 @@
     name: /media/data
     src: UUID=8f84ffcf-6ae2-491f-99dd-f9c6d409701b
     fstype: ext4
+    opts: defaults,nofail,x-systemd.device-timeout=5
     state: mounted
   become: yes
 
 - name: Mount up device strato hidrive
   mount:
     name: /media/cloud
-    src: https://webdav.hidrive.strato.com/users/engelrico
+    src: https://webdav.hidrive.strato.com
     fstype: davfs
-    state: mounted
+    opts: noauto,uid=fileMaster,gid=fileShareGroup
+    state: present
   become: yes

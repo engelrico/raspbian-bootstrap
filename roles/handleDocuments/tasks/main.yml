@@ -1,0 +1,37 @@
+- name: create directory - 00_scan
+  file:
+    path: /media/data/docs/000_STAGE/00_scan
+    state: directory
+    mode: '2770'
+    owner: fileMaster
+    group: fileShareGroup
+  become: yes
+
+- name: create directory - 10_ocr
+  file:
+    path: /media/data/docs/000_STAGE/10_ocr
+    state: directory
+    mode: '2770'
+    owner: fileMaster
+    group: fileShareGroup
+  become: yes
+
+- name: create directory - 20_ready
+  file:
+    path: /media/data/docs/000_STAGE/20_ready
+    state: directory
+    mode: '2770'
+    owner: fileMaster
+    group: fileShareGroup
+  become: yes
+
+- name: create directory for recoll INDEX- /media/data/index
+  file:
+    path: /media/data/index
+    state: directory
+    mode: '2770'
+    owner: fileMaster
+    group: fileShareGroup
+  become: yes
+#- name: every created file in this folder should be owned by the group of this folder
+#  shell: chmod g+s /media/data/docs/000_STAGE/00_scan
