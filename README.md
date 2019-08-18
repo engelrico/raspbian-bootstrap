@@ -11,8 +11,8 @@ later(but easy)
 
 manualy do:
 sudo smbpasswd -a fileMaster
-put secrets to /etc/davfs2/secrets
-
+#put secrets to /etc/davfs2/secrets
+https://www.strato.de/faq/cloud-speicher/hidrive-kann-ich-mich-auch-mit-einem-ssh-key-einloggen/
 
 start:
 ansible-playbook -K ./playbook.yml --tags "samba"

@@ -6,4 +6,5 @@
     - {role: mount, tags: mount}
     - {role: user,  tags: user}
     - {role: samba,  tags: samba}
-    - {role: handleDocuments,  tags: handleDocuments}  
+    - {role: handleDocuments,  tags: handleDocuments}
+    - {role: recoll,  tags: recoll}  

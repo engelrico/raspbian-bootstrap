@@ -26,8 +26,10 @@
 - name: Mount up device strato hidrive
   mount:
     name: /media/cloud
-    src: https://webdav.hidrive.strato.com
-    fstype: davfs
-    opts: noauto,uid=fileMaster,gid=fileShareGroup
+#    src: https://webdav.hidrive.strato.com
+#    fstype: davfs
+    src: engelrico@sftp.hidrive.strato.com:/
+    fstype: fuse.sshfs
+    opts: noauto,allow_other,uid=fileMaster,gid=fileShareGroup,IdentityFile=/home/pi/.ssh/id_rsa
     state: present
   become: yes

@@ -1,0 +1,30 @@
+---
+
+#- name: create directory - recoll-webui
+#  file:
+#    path: ~/recoll-webui
+#    state: directory
+#    mode: '0755'
+#  become: yes
+
+- name: download recoll-webui
+  get_url:
+    url: https://github.com/koniu/recoll-webui/archive/master.zip
+    dest: ~/
+
+- name: Extract master.zip into ~/recoll-webui
+  unarchive:
+    src: ~/recoll-webui-master.zip
+    dest: ~/
+
+- name: put recoll webui to cron - to run @reboot
+  cron:
+    name: "recoll webui at reboot"
+    special_time: reboot
+    job: "~/recoll-webui-master/webui-standalone.py -a 0.0.0.0 &"
+
+- name: put recollindex to cron - to run hourly
+  cron:
+    name: "recollindex"
+    special_time: hourly
+    job: "recollindex"
