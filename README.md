@@ -11,13 +11,13 @@ later(but easy)
 
 manualy do:
 
-flash image to sdcard
-put file "ssh" to boot
-sudo raspi-config
-sudo apt-get update
-sudo apt-get upgrade
+- flash image to sdcard
+- put file "ssh" to boot
+- sudo raspi-config
+- sudo apt-get update
+- sudo apt-get upgrade
 
-sudo smbpasswd -a fileMaster
+- sudo smbpasswd -a fileMaster
 #put secrets to /etc/davfs2/secrets
 https://www.strato.de/faq/cloud-speicher/hidrive-kann-ich-mich-auch-mit-einem-ssh-key-einloggen/
 
