@@ -8,3 +8,5 @@
     - {role: samba,  tags: samba}
     - {role: handleDocuments,  tags: handleDocuments}
     - {role: recoll,  tags: recoll}  
+    - {role: docker,  tags: docker}  
+    

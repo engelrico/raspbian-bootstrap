@@ -1,0 +1,9 @@
+- name: docker
+  shell: curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh >> dockerInstall.log
+
+- name: docker-compose
+  apt:
+    name: docker-compose
+    state: latest
+  register: installation
+  become: yes
