@@ -7,5 +7,5 @@
     - {role: user,  tags: user}
     - {role: samba,  tags: samba}
     - {role: handleDocuments,  tags: handleDocuments}
-    - {role: recoll,  tags: recoll}  
-    - {role: pi-hole,  tags: pi-hole}  
+    - {role: recoll,  tags: recoll}
+    - {role: pi-hole,  tags: pi-hole}
