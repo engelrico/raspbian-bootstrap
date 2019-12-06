@@ -1,0 +1,10 @@
+- git:
+    repo: 'https://github.com/pi-hole/docker-pi-hole.git'
+    dest: ~/docker-pi-hole/
+    update: yes
+
+- name: starts pi-hole docker @reboot"
+  cron:
+    name: "start pi-hole at reboot"
+    special_time: reboot
+    job: "cd ~/docker-pi-hole && docker-compose up -d"
