@@ -1,5 +1,5 @@
 - name: docker
-  shell: curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh >> dockerInstall.log
+  shell: cd ~ && curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh >> dockerInstall.log
 
 - name: docker-compose
   apt:
@@ -7,3 +7,9 @@
     state: latest
   register: installation
   become: yes
+
+- name: Add the user 'pi' 2 the group 'docker' - so the usr is allowed to operate with docker
+  user:
+    name: pi
+    groups: docker
+    append: yes
