@@ -16,7 +16,10 @@
   become: yes
 
 - name: put the customized conf to original place
-  shell: cp ./roles/samba/smb.conf /etc/samba/smb.conf
+  file:
+    src: files/smb.conf
+    dest: /etc/samba/smb.conf
+    mode: 0644
   become: yes
 
 - name: restart SAMBA
