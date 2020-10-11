@@ -1,10 +1,12 @@
 - git:
-    repo: 'https://github.com/pi-hole/docker-pi-hole.git'
-    dest: ~/docker-pi-hole/
+    repo: 'https://github.com/pi-hole/pi-hole.git'
+    dest: ~/Pi-hole
+    depth: 1
     update: yes
 
-- name: starts pi-hole docker @reboot"
-  cron:
-    name: "start pi-hole at reboot"
-    special_time: reboot
-    job: "cd ~/docker-pi-hole && docker-compose up -d"
+- name: Execute installation of pi-hole
+  become: yes
+  shell: bash basic-install.sh
+  args:
+    chdir: /home/pi/Pi-hole/automated install/
+#pihole -up to update
