@@ -16,14 +16,7 @@
 
 - name: recoll
   apt:
-    name: recoll
-    state: latest
-  register: installation
-  become: yes
-
-- name: python-recoll
-  apt:
-    name: python-recoll
+    name: recoll,python-recoll
     state: latest
   register: installation
   become: yes

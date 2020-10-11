@@ -4,63 +4,54 @@
   apt:
     name: ansible
     state: latest
-  register: installation
   become: yes
 
 - name: build tools
   apt:
     name: autoconf,make
     state: latest
-  register: installation
   become: yes
 
 - name: vim editor
   apt:
     name: vim
     state: latest
-  register: installation
   become: yes
 
 - name: python
   apt:
     name: python
     state: latest
-  register: installation
   become: yes
 
 - name: pip
   apt:
     name: python-pip
     state: latest
-  register: installation
   become: yes
 
 - name: pip3
   apt:
     name: python3-pip
     state: latest
-  register: installation
   become: yes
 
 - name: fuse
   apt:
     name: fuse
     state: latest
-  register: installation
   become: yes
 
 - name: sshfs
   apt:
     name: sshfs
     state: latest
-  register: installation
   become: yes
 
 - name: davfs2 - webdav for strato hidrive
   apt:
     name: davfs2
     state: latest
-  register: installation
   become: yes
 
 - name: dnsutils - bind and so

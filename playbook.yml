@@ -1,14 +1,12 @@
 - hosts: localhost
   roles:
     - {role: basic, tags: basic}
-    - {role: git,   tags: git}
     - {role: ocr,   tags: ocr}
     - {role: mount, tags: mount}
     - {role: user,  tags: user}
     - {role: samba,  tags: samba}
     - {role: handleDocuments,  tags: handleDocuments}
-    - {role: recoll,  tags: recoll}  
-    - {role: docker,  tags: docker}
+    - {role: recoll,  tags: recoll}
     - {role: pi-hole,  tags: pi-hole}
     - {role: isbg,  tags: isbg}
     - {role: unbound, tags: unbound}

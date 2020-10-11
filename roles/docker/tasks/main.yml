@@ -13,3 +13,4 @@
     name: pi
     groups: docker
     append: yes
+  become: yes
