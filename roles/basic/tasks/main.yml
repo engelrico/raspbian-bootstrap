@@ -62,3 +62,9 @@
     state: latest
   register: installation
   become: yes
+
+- name: dnsutils - bind and so
+  apt:
+   name: dnsutils
+   state: latest
+  become: yes
