@@ -8,5 +8,6 @@
     - {role: handleDocuments,  tags: handleDocuments}
     - {role: recoll,  tags: recoll}
     - {role: pi-hole,  tags: pi-hole}
-    - {role: isbg,  tags: isbg}
-    - {role: unbound, tags: unbound}
+    - {role: weather, tags: weather}
+#    - {role: isbg,  tags: isbg}
+#    - {role: unbound, tags: unbound}

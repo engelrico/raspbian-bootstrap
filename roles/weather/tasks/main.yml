@@ -1,0 +1,14 @@
+
+- name: clone github adafruit
+  git:
+    repo: https://github.com/adafruit/Adafruit_Python_DHT.git
+    dest: ~/adafruit_python
+
+- name: create python adafruit library
+  shell: cd /home/pi/adafruit_python && sudo python setup.py install
+  become: yes
+ 
+- name: Install requests python package
+  pip:
+    name: requests
+  become: yes
