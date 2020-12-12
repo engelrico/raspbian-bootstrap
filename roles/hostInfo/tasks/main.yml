@@ -1,0 +1,17 @@
+
+- name: Install requests python package
+  pip:
+    name: requests
+  become: yes
+  
+- name: Install psutils  python package
+  pip:
+    name: psutil
+  become: yes
+  
+- name: put hostInfo to cron - to run every 5 minutes
+  cron:
+    name: "hostInfoLog"
+    minute: "*/5"
+    job: "sleep 30; /home/pi/raspbian-bootstrap/roles/hostInfo/script/hostInfo.py"
+  

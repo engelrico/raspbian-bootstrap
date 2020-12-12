@@ -9,5 +9,6 @@
     - {role: recoll,  tags: recoll}
     - {role: pi-hole,  tags: pi-hole}
     - {role: weather, tags: weather}
+    - {role: hostInfo, tags: hostInfo} 
 #    - {role: isbg,  tags: isbg}
 #    - {role: unbound, tags: unbound}
