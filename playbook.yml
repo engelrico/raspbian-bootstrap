@@ -12,3 +12,5 @@
 #    - {role: unbound, tags: unbound}
     - {role: influxdb, tags: influxdb}
     - {role: grafana, tags: grafana}
+    - {role: weather, tags: weather}
+    - {role: hostInfo, tags: hostInfo} 
