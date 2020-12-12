@@ -6,6 +6,10 @@
     state: latest
   become: yes
 
+#- name: install ansible community general
+#  command: "ansible-galaxy collection install community.general"
+#  become: yes
+
 - name: build tools
   apt:
     name: autoconf,make

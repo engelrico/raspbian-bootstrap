@@ -1,0 +1,51 @@
+- name: Import InfluxDB GPG signing key
+  apt_key: url=https://repos.influxdata.com/influxdb.key state=present
+  become: yes
+
+- name: Run lsb_release and register its output as a variable
+  command: "lsb_release -cs"
+  register: release_name
+
+- name: Add InfluxDB repository
+  apt_repository: 
+    repo: "deb https://repos.influxdata.com/debian {{ release_name.stdout }} stable"
+    state: present
+  become: yes
+
+- name: Install InfluxDB packages
+  apt: name=influxdb state=present
+  become: yes
+
+- name: Modify InfluxDB hostname
+  replace:
+    dest=/etc/influxdb/influxdb.conf
+    regexp='hostname = "localhost"'
+    replace='hostname = "{{ ansible_hostname }}"'
+    backup=yes
+
+- name: Start the InfluxDB service
+  service: name=influxd state=restarted
+  become: yes
+
+
+#- name: Create database home
+#  community.general.influxdb_database:
+#      hostname: "localhost"
+#      database_name: "home"
+
+- name: create directory - database home
+  file:
+    path: /media/data/db/influxdb
+    state: directory
+#    mode: '2770'
+    owner: influxdb
+    group: influxdb
+  become: yes
+
+
+- name: replace the destination of the database
+  replace:
+    path: /etc/influxdb/influxdb.conf
+    regexp: 'var\/lib\/influxdb'
+    replace: 'media/data/db/influxdb'
+  become: yes
