@@ -12,3 +12,10 @@
   pip:
     name: requests
   become: yes
+  
+- name: put weatherLog to cron - to run every 5 minutes
+  cron:
+    name: "gardenWeatherLog"
+    minute: "/5"
+    job: "/home/pi/raspbian-bootstrap/roles/weather/script/weatherLog.py"
+  
